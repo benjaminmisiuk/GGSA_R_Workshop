@@ -1,0 +1,11 @@
+﻿province,u_18_24,u_25_29,u_30_34,breweries_per_100k,sales_per_cap,temp,precip
+Newfoundland and Labrador,33,10,5,4.6,90.6,-0.99,1022.86
+Prince Edward Island,29,8,3,7.8,73.6,6.12,1117.25
+Nova Scotia,29,10,4,8.7,71.1,6.49,1381.55
+New Brunswick,25,4,3,9.4,77.4,4.7,1205.37
+Quebec,27,12,6,3.7,77.4,-2.01,827.27
+Ontario,36,7,3,3.1,65,0.96,759.1
+Manitoba,31,8,5,1.9,67.5,-1.47,508.82
+Saskatchewan,30,9,4,3.4,67,0.67,435.07
+Alberta,34,8,3,3.8,69,1.46,469.15
+British Columbia,35,8,3,5.5,64.8,1.96,953.99
