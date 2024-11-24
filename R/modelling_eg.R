@@ -1,3 +1,6 @@
+#install.packages("earth")
+#install.packages("randomForest")
+
 #load the data
 df <- read.csv("D:/Documents/GitHub/GGSA_R_Workshop/data/canada_beer.csv")
 
