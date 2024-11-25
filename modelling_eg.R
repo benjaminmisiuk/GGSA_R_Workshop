@@ -6,8 +6,11 @@ df <- read.csv("canada_beer.csv")
 
 head(df)
 
-plot(df$temp, df$breweries_per_100k); cor(df$temp, df$breweries_per_100k)
-plot(df$precip, df$breweries_per_100k); cor(df$precip, df$breweries_per_100k)
+plot(df$temp, df$breweries_per_100k)
+cor(df$temp, df$breweries_per_100k)
+
+plot(df$precip, df$breweries_per_100k)
+cor(df$precip, df$breweries_per_100k)
 
 #fit a linear model between precipitation and breweries per 100k
 lm_mod <- lm(formula = breweries_per_100k ~ precip, data = df)
