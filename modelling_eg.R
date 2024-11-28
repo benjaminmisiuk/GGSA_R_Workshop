@@ -2,10 +2,15 @@
 #install.packages("randomForest")
 
 #load the data
-df <- read.csv("D:/Documents/GitHub/GGSA_R_Workshop/data/canada_beer.csv")
+df <- read.csv("canada_beer.csv")
+
+head(df)
 
 plot(df$temp, df$breweries_per_100k)
+cor(df$temp, df$breweries_per_100k)
+
 plot(df$precip, df$breweries_per_100k)
+cor(df$precip, df$breweries_per_100k)
 
 #fit a linear model between precipitation and breweries per 100k
 lm_mod <- lm(formula = breweries_per_100k ~ precip, data = df)
@@ -28,7 +33,7 @@ library(earth)
 mars_mod <- earth(formula = breweries_per_100k ~ precip, data = df)
 #predict the x values on the plot using the model
 df$mars <- predict(mars_mod, df)
-lines(df$precip[i], df$mars[i], col = 'blue')
+lines(df$precip[i], df$mars[i], lty = 2)
 
 #predict how many breweries there would be in a city with 1000mm of precipitation
 predict(lm_mod, data.frame(precip = 1000))
@@ -44,3 +49,13 @@ mars_mod <- earth(formula = breweries_per_100k ~ temp + precip, data = df)
 predict(lm_mod, data.frame(temp = 5, precip = 1000))
 predict(rf_mod, data.frame(temp = 5, precip = 1000))
 predict(mars_mod, data.frame(temp = 5, precip = 1000))
+
+#examine the models
+summary(lm_mod)
+
+rf_mod
+partialPlot(rf_mod, df, temp)
+partialPlot(rf_mod, df, precip)
+
+summary(mars_mod)
+plot(mars_mod)
